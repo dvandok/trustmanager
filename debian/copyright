@@ -1,7 +1,7 @@
 Format: http://dep.debian.net/deps/dep5/
 Upstream-Name: trustmanager
 Upstream-contact: info@eu-emi.eu
-Source: http://jra1mw.cvs.cern.ch/cgi-bin/jra1mw.cgi/org.glite.security.util-java/src.tar.gz?view=tar&pathrev=emi-trustmanager_R_3_1_0
+Source: http://jra1mw.cvs.cern.ch/cgi-bin/jra1mw.cgi/org.glite.security.util-java/
 Licence: Apache-2.0
 
 Files: *
