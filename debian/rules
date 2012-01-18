@@ -16,3 +16,6 @@ binary-post-install/libtrustmanager-java::
 
 clean::
 	mh_clean
+
+get-orig-source:
+	uscan --download-version $(DEB_UPSTREAM_VERSION) --force-download --rename
