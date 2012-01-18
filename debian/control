@@ -5,20 +5,35 @@ Maintainer: Dennis van Dok (Software Engineer) <dennisvd@nikhef.nl>
 Build-Depends: debhelper (>= 7), cdbs, default-jdk, javahelper (>= 0.37), ant,
  maven-repo-helper, liblog4j1.2-java, libbcprov-java, junit
 Standards-Version: 3.9.2
-Homepage: <homepage>
+Homepage: https://twiki.cern.ch/twiki/bin/view/EGEE/TrustManager
 
 Package: libtrustmanager-java
 Architecture: all
 Depends: ${java:Depends}, ${misc:Depends}
 Recommends: ${java:Recommends}
-Description: Short Description
- Long Description
+Description: Java TrustManager interface with grid features
+ TrustManager is an implementation of the java TrustManager interface
+ with implementation of cert path checking, grid namespace
+ restrictions and dynamic loading of CA certs, credentials, CRLs and
+ namespace restrictions. Also provided is integration into tomcat,
+ axis and axis2. There are many utility classes and methods for
+ certificate and proxy creation and handling in trustmanager. It can
+ be used both in the server side for the server ssl handler and on the
+ client side for the opening of ssl connections.
+
 
 Package: libtrustmanager-java-doc
 Architecture: all
 Depends: ${java:Depends}, ${misc:Depends}
 Recommends: ${java:Recommends}
-Description: Short Description - doc
- Long Description
+Description: Java TrustManager interface with grid features
+ TrustManager is an implementation of the java TrustManager interface
+ with implementation of cert path checking, grid namespace
+ restrictions and dynamic loading of CA certs, credentials, CRLs and
+ namespace restrictions. Also provided is integration into tomcat,
+ axis and axis2. There are many utility classes and methods for
+ certificate and proxy creation and handling in trustmanager. It can
+ be used both in the server side for the server ssl handler and on the
+ client side for the opening of ssl connections.
  .
- This package contains the Javadoc API
+ This package contains the Javadoc API.
