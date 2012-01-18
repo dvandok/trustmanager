@@ -3,7 +3,7 @@ Section: java
 Priority: optional
 Maintainer: Dennis van Dok (Software Engineer) <dennisvd@nikhef.nl>
 Build-Depends: debhelper (>= 7), cdbs, default-jdk, javahelper (>= 0.37), ant,
- maven-repo-helper
+ maven-repo-helper, liblog4j1.2-java, libbcprov-java, junit
 Standards-Version: 3.9.2
 Homepage: <homepage>
 
