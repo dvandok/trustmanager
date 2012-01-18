@@ -94,8 +94,6 @@ public class ProxyCertificateGenerator {
     private int m_type = -1;
     /** Whether the proxy is limited (invalid for job submission) or not. */
     private boolean m_limited = false;
-    /** The message digest algorithm to use, take it from the given parent certificate. */
-    private String m_hashAlgorithm = null;
     /** The keylegth to use for this proxy. */
     private int m_keyLength = DEFAULT_KEY_LENGTH;
     /** The proxy path length limit for rfc proxies. */
@@ -123,7 +121,6 @@ public class ProxyCertificateGenerator {
         m_parentCertChain = parentCertChain;
         m_parentCert = parentCertChain[0];
         m_baseName = (X509Name) m_parentCert.getSubjectDN();
-        m_hashAlgorithm = m_parentCert.getSigAlgName();
 
         ProxyCertificateInfo parentProxyInfo = new ProxyCertificateInfo(m_parentCert);
 
@@ -274,7 +271,6 @@ public class ProxyCertificateGenerator {
             throw new IllegalArgumentException("Unknown or unsupported proxy type");
         }
         m_certGen.setIssuerDN(m_baseName);
-        m_certGen.setSignatureAlgorithm(m_hashAlgorithm);
         // if the new DN is set (cert request), use it, otherwise set it up.
         /*
          * if (m_newDN != null) { m_certGen.setSubjectDN(m_newDN); } else { String newCN = guessCN(m_baseName, false);

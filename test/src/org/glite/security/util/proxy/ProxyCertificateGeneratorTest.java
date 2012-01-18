@@ -40,7 +40,6 @@ import org.glite.security.util.CertUtil;
 import org.glite.security.util.DNHandler;
 import org.glite.security.util.FileCertReader;
 import org.glite.security.util.IPAddressComparator;
-import org.glite.security.util.Password;
 import org.glite.security.util.PrivateKeyReader;
 
 public class ProxyCertificateGeneratorTest extends TestBase {
@@ -120,8 +119,6 @@ public class ProxyCertificateGeneratorTest extends TestBase {
 			assertTrue(DNHandler.getSubject(certs[0]).withoutLastCN(true).equals(DNHandler.getIssuer(certs[0])));
 			assertTrue(DNHandler.getSubject(certs[0]).withoutLastCN(true).equals(DNHandler.getSubject(certs[1])));
 			proxyInfo = new ProxyCertificateInfo(certs[0]);
-			System.out.println(certs[0]);
-			System.out.println(certs[1]);
 			proxyChainInfo = new ProxyChainInfo(certs);
 			assertTrue(proxyInfo.getProxyPathLimit() == ProxyCertInfoExtension.UNLIMITED);
 			assertTrue(proxyInfo.getProxyPolicyOID() != null);
@@ -388,105 +385,4 @@ public class ProxyCertificateGeneratorTest extends TestBase {
 
 	}
 	
-    public void testProxyGenMd5() {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(m_certHome + "/trusted-certs/trusted_clientmd5.priv"));
-            PrivateKey privateKey = PrivateKeyReader.read(br, new Password("changeit".toCharArray()));
-            FileCertReader certReader = new FileCertReader();
-            X509Certificate[] certChain = (X509Certificate[])certReader.readCerts(m_certHome + "/trusted-certs/trusted_clientmd5.cert").toArray(new X509Certificate[]{});
-            // -------------------------------------------------------------------------------------------
-            ProxyCertificateGenerator proxyGen = new ProxyCertificateGenerator(certChain);
-            proxyGen.generate(privateKey);
-            X509Certificate[] certs = proxyGen.getCertChain();
-            System.out.println(certs[0].getSigAlgName());
-            assertTrue(certs[0].getSigAlgName().equals(certs[1].getSigAlgName()));
-
-            // System.out.println(legGenGen.getProxyAsPEM());
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-    
-    public void testProxyGenSha224() {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(m_certHome + "/trusted-certs/trusted_clientsha224.priv"));
-            PrivateKey privateKey = PrivateKeyReader.read(br, new Password("changeit".toCharArray()));
-            FileCertReader certReader = new FileCertReader();
-            X509Certificate[] certChain = (X509Certificate[])certReader.readCerts(m_certHome + "/trusted-certs/trusted_clientsha224.cert").toArray(new X509Certificate[]{});
-            // -------------------------------------------------------------------------------------------
-            ProxyCertificateGenerator proxyGen = new ProxyCertificateGenerator(certChain);
-            proxyGen.generate(privateKey);
-            X509Certificate[] certs = proxyGen.getCertChain();
-            System.out.println(certs[0].getSigAlgName());
-            assertTrue(certs[0].getSigAlgName().equals(certs[1].getSigAlgName()));
-
-            // System.out.println(legGenGen.getProxyAsPEM());
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-    
-    public void testProxyGenSha256() {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(m_certHome + "/trusted-certs/trusted_clientsha256.priv"));
-            PrivateKey privateKey = PrivateKeyReader.read(br, new Password("changeit".toCharArray()));
-            FileCertReader certReader = new FileCertReader();
-            X509Certificate[] certChain = (X509Certificate[])certReader.readCerts(m_certHome + "/trusted-certs/trusted_clientsha256.cert").toArray(new X509Certificate[]{});
-            // -------------------------------------------------------------------------------------------
-            ProxyCertificateGenerator proxyGen = new ProxyCertificateGenerator(certChain);
-            proxyGen.generate(privateKey);
-            X509Certificate[] certs = proxyGen.getCertChain();
-            System.out.println(certs[0].getSigAlgName());
-            assertTrue(certs[0].getSigAlgName().equals(certs[1].getSigAlgName()));
-
-            // System.out.println(legGenGen.getProxyAsPEM());
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-    
-    public void testProxyGenSha384() {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(m_certHome + "/trusted-certs/trusted_clientsha384.priv"));
-            PrivateKey privateKey = PrivateKeyReader.read(br, new Password("changeit".toCharArray()));
-            FileCertReader certReader = new FileCertReader();
-            X509Certificate[] certChain = (X509Certificate[])certReader.readCerts(m_certHome + "/trusted-certs/trusted_clientsha384.cert").toArray(new X509Certificate[]{});
-            // -------------------------------------------------------------------------------------------
-            ProxyCertificateGenerator proxyGen = new ProxyCertificateGenerator(certChain);
-            proxyGen.generate(privateKey);
-            X509Certificate[] certs = proxyGen.getCertChain();
-            System.out.println(certs[0].getSigAlgName());
-            assertTrue(certs[0].getSigAlgName().equals(certs[1].getSigAlgName()));
-
-            // System.out.println(legGenGen.getProxyAsPEM());
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-    
-    public void testProxyGenSha512() {
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(m_certHome + "/trusted-certs/trusted_clientsha512.priv"));
-            PrivateKey privateKey = PrivateKeyReader.read(br, new Password("changeit".toCharArray()));
-            FileCertReader certReader = new FileCertReader();
-            X509Certificate[] certChain = (X509Certificate[])certReader.readCerts(m_certHome + "/trusted-certs/trusted_clientsha512.cert").toArray(new X509Certificate[]{});
-            // -------------------------------------------------------------------------------------------
-            ProxyCertificateGenerator proxyGen = new ProxyCertificateGenerator(certChain);
-            proxyGen.generate(privateKey);
-            X509Certificate[] certs = proxyGen.getCertChain();
-            System.out.println(certs[0].getSigAlgName());
-            assertTrue(certs[0].getSigAlgName().equals(certs[1].getSigAlgName()));
-
-            // System.out.println(legGenGen.getProxyAsPEM());
-        } catch (Exception e) {
-            e.printStackTrace();
-            throw new RuntimeException(e);
-        }
-    }
-    
-    
 }

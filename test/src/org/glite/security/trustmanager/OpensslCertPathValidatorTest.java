@@ -32,7 +32,6 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 import org.glite.security.TestBase;
-import org.glite.security.util.CaseInsensitiveProperties;
 import org.glite.security.util.FileCertReader;
 
 /**
@@ -283,7 +282,6 @@ public class OpensslCertPathValidatorTest extends TestBase {
 		    if(thrownException != null){
 		        LOGGER.error("Unwanted exception was: " + thrownException.getMessage(), thrownException);
 		    }
-		    System.out.println("Test of cert "+ testItem.m_chain[0].getSubjectDN() + " from "+testItem.m_fileName+" didn't go as planned, test was expected to " +  ((testItem.m_ok ^ reverse)?"succeed":"fail") + " and it " + (newException?"failed":"succeeded")+".");
 		    assertTrue(false);
 		}
 		
@@ -367,83 +365,6 @@ public class OpensslCertPathValidatorTest extends TestBase {
 
 	}
 
-	/**
-	 * check with crls not required and not present.
-	 * 
-	 * @throws Exception DOCUMENT ME!
-	 */
-	@SuppressWarnings("deprecation")
-    public void testCheckCRLnew() throws Exception {
-		setup(true);
-		CaseInsensitiveProperties props = new CaseInsensitiveProperties();
-		props.put(ContextWrapper.CRL_ENABLED, "true");
-		props.put(ContextWrapper.CRL_REQUIRED, "false");
-		
-		OpensslCertPathValidator validator = new OpensslCertPathValidator(m_certHome + "/grid-security/certificates-withoutCrl/", false, null);
-
-        Logger LOGGERRoot = Logger.getLogger("org.glite.security");
-        Layout lay = new PatternLayout("%d{ISO8601} %-5p [%t] %c{2}%l %x - %m%n");
-        Appender appender = new ConsoleAppender(lay);
-        LOGGERRoot.addAppender(appender);
-        LOGGERRoot.setLevel(Level.INFO);
-
-        doTests(validator, m_bigProxies, false);
-        LOGGERRoot.setLevel(Level.INFO);
-        doTests(validator, m_subsubBadDNProxies, false);
-        doTests(validator, m_subsubRevokedProxies, true);
-        doTests(validator, m_subsubProxies, false);
-		doTests(validator, m_trustedCerts, false);
-		doTests(validator, m_trustedRevokedCerts, true);
-		doTests(validator, m_trustedProxies, false);
-		doTests(validator, m_trustedRevokedProxies, true);
-		doTests(validator, m_fakeCerts, false);
-		doTests(validator, m_fakeProxies, false);
-		doTests(validator, m_miscProxies, false);
-		
-//		validator = new OpensslCertPathValidator(m_certHome + "/grid-security/certificates-withoutCrl/", false, null);
-//		doTests(validator, m_trustedCertsForNoCRL, true);
-		
-
-	}
-
-	/**
-	 * check with crls not required and not present.
-	 * 
-	 * @throws Exception DOCUMENT ME!
-	 */
-	@SuppressWarnings("deprecation")
-    public void testCheckCRLnew2() throws Exception {
-		setup(true);
-		CaseInsensitiveProperties props = new CaseInsensitiveProperties();
-		props.put(ContextWrapper.CRL_ENABLED, "false");
-		props.put(ContextWrapper.CRL_REQUIRED, "false");
-		
-		OpensslCertPathValidator validator = new OpensslCertPathValidator(m_certHome + "/grid-security/certificates-withoutCrl/", false, props);
-
-        Logger LOGGERRoot = Logger.getLogger("org.glite.security");
-        Layout lay = new PatternLayout("%d{ISO8601} %-5p [%t] %c{2}%l %x - %m%n");
-        Appender appender = new ConsoleAppender(lay);
-        LOGGERRoot.addAppender(appender);
-        LOGGERRoot.setLevel(Level.INFO);
-
-        doTests(validator, m_bigProxies, false);
-        LOGGERRoot.setLevel(Level.INFO);
-        doTests(validator, m_subsubBadDNProxies, false);
-        doTests(validator, m_subsubRevokedProxies, true);
-        doTests(validator, m_subsubProxies, false);
-		doTests(validator, m_trustedCerts, false);
-		doTests(validator, m_trustedRevokedCerts, true);
-		doTests(validator, m_trustedProxies, false);
-		doTests(validator, m_trustedRevokedProxies, true);
-		doTests(validator, m_fakeCerts, false);
-		doTests(validator, m_fakeProxies, false);
-		doTests(validator, m_miscProxies, false);
-		
-//		validator = new OpensslCertPathValidator(m_certHome + "/grid-security/certificates-withoutCrl/", false, props);
-//		doTests(validator, m_trustedCertsForNoCRL, false);
-		
-
-	}
 	/**
 	 * DOCUMENT ME!
 	 * 
