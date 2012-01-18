@@ -1,0 +1,56 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 388 (0x184)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=UG, L=Tropic, O=Utopia, OU=Relaxation, CN=the trusted CA
+        Validity
+            Not Before: Dec 15 22:23:58 2011 GMT
+            Not After : Aug 23 22:23:58 2025 GMT
+        Subject: C=UG, L=Tropic, O=Utopia, OU=Relaxation, CN=trusted flag client
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (1024 bit)
+                Modulus (1024 bit):
+                    00:dd:71:7d:f7:52:86:4f:67:78:ec:4b:a0:c1:af:
+                    af:07:a7:f1:6b:08:da:e7:72:75:6b:bb:d0:e4:9c:
+                    5c:05:3a:a8:85:9b:a5:ec:40:92:51:8f:5c:ad:5a:
+                    44:1b:f2:24:cb:ae:fb:06:2f:b5:35:02:3b:8e:66:
+                    5c:d3:c2:1a:91:ae:bb:cc:b0:2b:6e:ca:54:da:f9:
+                    07:40:ca:58:02:6c:42:b3:5d:ed:f6:6d:7d:26:9a:
+                    a3:cf:e9:e3:a1:ac:68:a9:ae:04:1d:de:bf:cb:07:
+                    b2:3d:a5:cd:0b:2f:4e:5d:a5:ff:7d:82:57:a3:1d:
+                    65:1c:70:8b:06:96:4e:2d:cb
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            X509v3 Key Usage: critical
+                Digital Signature, Non Repudiation, Key Encipherment
+            Netscape Comment: 
+                OpenSSL Generated Client Certificate with key usage
+    Signature Algorithm: sha1WithRSAEncryption
+        6f:51:a9:11:01:90:6e:a3:78:99:cb:ba:d2:bc:e5:47:7a:7b:
+        43:d9:53:a4:ae:ed:dd:28:a1:4d:17:f4:2d:ba:d9:5b:66:a3:
+        95:d9:2a:30:2a:91:3b:07:db:d4:99:43:ee:5f:00:45:0a:b5:
+        7d:8f:2c:4b:e8:71:5a:2e:32:c0:4a:8f:70:32:76:b7:8a:74:
+        bb:65:dc:b6:1a:22:82:2b:1b:c5:aa:27:cb:07:8a:e0:27:7b:
+        cf:3c:b9:e1:c0:8f:bb:65:6f:c5:e7:6c:bb:3c:eb:12:70:73:
+        f3:40:59:6d:a0:fd:f6:64:ae:43:01:65:e5:8d:e1:b5:ef:a3:
+        2a:d4
+-----BEGIN CERTIFICATE-----
+MIIClzCCAgCgAwIBAgICAYQwDQYJKoZIhvcNAQEFBQAwXTELMAkGA1UEBhMCVUcx
+DzANBgNVBAcTBlRyb3BpYzEPMA0GA1UEChMGVXRvcGlhMRMwEQYDVQQLEwpSZWxh
+eGF0aW9uMRcwFQYDVQQDEw50aGUgdHJ1c3RlZCBDQTAeFw0xMTEyMTUyMjIzNTha
+Fw0yNTA4MjMyMjIzNThaMGIxCzAJBgNVBAYTAlVHMQ8wDQYDVQQHEwZUcm9waWMx
+DzANBgNVBAoTBlV0b3BpYTETMBEGA1UECxMKUmVsYXhhdGlvbjEcMBoGA1UEAxMT
+dHJ1c3RlZCBmbGFnIGNsaWVudDCBnzANBgkqhkiG9w0BAQEFAAOBjQAwgYkCgYEA
+3XF991KGT2d47Eugwa+vB6fxawja53J1a7vQ5JxcBTqohZul7ECSUY9crVpEG/Ik
+y677Bi+1NQI7jmZc08Iaka67zLArbspU2vkHQMpYAmxCs13t9m19Jpqjz+njoaxo
+qa4EHd6/yweyPaXNCy9OXaX/fYJXox1lHHCLBpZOLcsCAwEAAaNhMF8wCQYDVR0T
+BAIwADAOBgNVHQ8BAf8EBAMCBeAwQgYJYIZIAYb4QgENBDUWM09wZW5TU0wgR2Vu
+ZXJhdGVkIENsaWVudCBDZXJ0aWZpY2F0ZSB3aXRoIGtleSB1c2FnZTANBgkqhkiG
+9w0BAQUFAAOBgQBvUakRAZBuo3iZy7rSvOVHentD2VOkru3dKKFNF/QtutlbZqOV
+2SowKpE7B9vUmUPuXwBFCrV9jyxL6HFaLjLASo9wMna3inS7Zdy2GiKCKxvFqifL
+B4rgJ3vPPLnhwI+7ZW/F52y7POsScHPzQFltoP32ZK5DAWXljeG176Mq1A==
+-----END CERTIFICATE-----

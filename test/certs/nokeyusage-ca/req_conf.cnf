@@ -1,0 +1,127 @@
+### req command
+
+oid_section		= new_oids
+
+[ new_oids ]
+limitedProxyOid		= 1.3.6.1.4.1.3536.1.1.1.9
+
+[ req ]
+default_bits		= 1024
+distinguished_name	= req_distinguished_name
+
+[ req_distinguished_name ]
+
+[ ca_cert_req ]
+basicConstraints	= CA:true
+subjectKeyIdentifier	= hash
+authorityKeyIdentifier	= keyid:always,issuer:always
+keyUsage		= critical, cRLSign, keyCertSign
+
+[ ca_cert_req_nokeyusage ]
+basicConstraints	= CA:true
+subjectKeyIdentifier	= hash
+authorityKeyIdentifier	= keyid:always,issuer:always
+keyUsage		= critical, cRLSign
+
+[ proxy_cert_req ]
+
+[ proxy_proxy_cert_req ]
+
+#### ca command
+
+[ca]
+default_ca 		= CA_default
+
+[CA_default]
+dir 			= $ENV::CASROOT/nokeyusage-ca
+database 		= $dir/index.txt
+serial 			= $dir/serial.txt
+default_md 		= sha1
+
+certificate 		= $dir/nokeyusage.cert
+private_key 		= $dir/nokeyusage.priv
+
+policy = policy_any
+
+[policy_any]
+countryName		= supplied
+stateOrProvinceName	= optional
+localityName		= optional
+organizationName	= optional
+organizationalUnitName	= optional
+commonName		= supplied
+emailAddress		= optional
+userId			= optional
+serialNumber		= optional
+
+[ ca_cert ]
+basicConstraints	= CA:TRUE
+
+
+[ ca_server ]
+# This is OK for an SSL server.
+nsCertType		= server
+nsComment		= "OpenSSL Generated Server Certificate"
+# For an object signing certificate this would be used.
+# nsCertType 		= objsign
+
+[ ca_altname ]
+# This is OK for an SSL server.
+nsCertType		= server
+nsComment		= "OpenSSL Generated Server Certificate"
+subjectAltName 		= DNS:*.hoo.org,DNS:joo.haa.org,IP:123.124.220.1,DNS:g*a.e*.com
+
+[ ca_altname2 ]
+# This is OK for an SSL server.
+nsCertType		= server
+nsComment		= "OpenSSL Generated Server Certificate"
+subjectAltName		= $ENV::DNS_HOSTNAME
+
+[ ca_altname3 ]
+# This is OK for an SSL server.
+nsCertType		= server
+nsComment		= "OpenSSL Generated Server Certificate"
+subjectAltName 		= email:john.doe@foo.bar
+
+[ ca_client ]
+# For normal client use this is typical
+nsCertType 		= client, email
+nsComment		= "OpenSSL Generated Client Certificate"
+
+[ ca_clientserver ]
+# For normal client use this is typical
+nsCertType 		= server, client, email
+nsComment		= "OpenSSL Generated Client Server Certificate"
+
+[ ca_fclient ]
+# This is typical in keyUsage for a client certificate.
+basicConstraints	= CA:false
+keyUsage 		= critical, nonRepudiation, digitalSignature, keyEncipherment
+nsComment		= "OpenSSL Generated Client Certificate with key usage"
+
+[ ca_none ]
+nsComment		= "OpenSSL Generated Client Certificate without Flags"
+
+[ proxy_none ]
+keyUsage		= critical,digitalSignature,keyEncipherment
+
+[ proxy_invalid_usage ]
+keyUsage		= critical,keyEncipherment
+
+[ proxy_rfc_pathLen1 ]
+proxyCertInfo=critical,language:id-ppl-inheritAll,pathlen:1
+
+[ proxy_rfc ]
+proxyCertInfo=critical,language:id-ppl-inheritAll
+
+[ proxy_rfc_anypolicy ]
+proxyCertInfo=critical,language:id-ppl-anyLanguage,policy:text:AB
+
+[ proxy_rfc_independent ]
+proxyCertInfo=critical,language:id-ppl-independent,pathlen:1
+
+[ proxy_rfc_limited ]
+proxyCertInfo=critical,language:limitedProxyOid
+
+[ crl_section ]
+crlDistributionPoints=URI:http://myhost.com/myca.crl

@@ -1,0 +1,7 @@
+# Namespace for the /C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/CN=the slash CA"
+TO Issuer "/C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/CN=the slash CA"   PERMIT Subject "/C=UG/L=Tropic/O=Utopia/OU=Relaxation/*"
+ 
+
+# add also the namespace with slashes
+TO Issuer "/C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/CN=the slash CA"   PERMIT Subject "/C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/*"
+ 

@@ -1,0 +1,5 @@
+# @(#)$Id: testCERN2.signing_policy,v 1.1 2010/05/17 20:35:10 hahkala Exp $
+# CERN TCA
+access_id_CA            X509    '/DC=ch/DC=cern/CN=CERN Trusted Certification Authority'
+pos_rights              globus  CA:sign
+cond_subjects           globus  '"/DC=ch/DC=cern/*"'

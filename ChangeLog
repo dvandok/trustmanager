@@ -1,0 +1,4 @@
+2.0.1
+	* further development and simplification of proxy generator and info classes
+	* added DN.getRFC2253v2 method to give DN where only rfc 2253 defined oids are decoded and the emailAddress is emailAddress.
+

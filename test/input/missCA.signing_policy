@@ -1,0 +1,4 @@
+ 
+ pos_rights        globus        CA:sign
+ 
+ cond_subjects     globus       '"/DC=org/DC=DOEGrids/*" "/DC=org/DC=doegrids/*" "/O=DOEGrids.org/*" "/O=doegrids.org/*"'

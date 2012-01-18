@@ -1,0 +1,5 @@
+ access_id_CA      X509         '/DC=org/DC=DOEGrids/OU=Certificate Authorities/CN=DOEGrids CA 1'
+ 
+ pos_rights        globus        CA:sign
+ 
+ 

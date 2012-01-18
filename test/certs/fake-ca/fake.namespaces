@@ -1,0 +1,3 @@
+# Namespace for the /C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=the fake CA"
+TO Issuer "/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=the fake CA"   PERMIT Subject "/C=UG/L=Tropic/O=Utopia/OU=Relaxation/*"
+ 

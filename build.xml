@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+Copyright (c) Members of the EGEE Collaboration. 2004. 
+See http://www.eu-egee.org/partners/ for details on the copyright
+holders.  
+
+Licensed under the Apache License, Version 2.0 (the "License"); 
+you may not use this file except in compliance with the License. 
+You may obtain a copy of the License at 
+
+    http://www.apache.org/licenses/LICENSE-2.0 
+
+Unless required by applicable law or agreed to in writing, software 
+distributed under the License is distributed on an "AS IS" BASIS, 
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+See the License for the specific language governing permissions and 
+limitations under the License.
+
+	Build file for the gLite security util-java component
+	
+	Authors: Joachim Flammer <Joachim.Flammer@Cern.ch>	
+                 Joni Hahkala <joni.hahkala@cern.ch>
+	
+	
+-->
+
+<project name="trustmanager" default="dist">
+
+	<property name="jdk.target.version.force" value="1.5" />
+
+	<property name="workspace.dir" value=".." />
+	<property name="project-name" value="trustmanager" />
+	<property name="jar.name" value="${project-name}" />
+
+	<property name="stage" value="${workspace.dir}/stage" />
+	<property name="java.share.path" value="/usr/share/java" />
+	<property name="stage.java.share.path" value="${stage}${java.share.path}" />
+	
+	<property name="prefix" value="tmp-prefix" />
+	<property name="package.prefix" value="${prefix}" />
+	<property name="package.java.share.path" value="${package.prefix}/usr/share/java" />
+	<property name="package.javadoc.path" value="${package.prefix}/usr/share/doc/${project-name}/html" />
+	<property name="package.doc.path" value="${package.prefix}/usr/share/doc/${project-name}" />
+
+	<!-- set the default locations, setting these during call to ant will override these -->
+    <property name="log4j.location" value="${java.share.path}"/>
+    <property name="bouncycastle.location" value="${java.share.path}"/>
+    <property name="junit.location" value="${java.share.path}"/>
+	<property name="build.dir" value="build"/>
+	<property name="test.dir" value="test-build"/>
+
+	<tstamp>
+	   <format property="build.time" pattern="dd-MM-yyyy HH:mm:ss Z"/>
+	</tstamp>
+	<!--<hostinfo prefix="buildhost"/> only from ant 1.8 for manifest-->
+	
+    <property file="src/TMversion.properties"/>
+
+	<target name="init" description="Module specific initialization tasks">
+
+        <echo message="log4j.location              	=${log4j.location}"/>
+        <echo message="bouncycastle.location        =${bouncycastle.location}"/>
+        <echo message="junit.location           	=${junit.location}"/>
+        <echo message="system java share dir:"/>
+ 
+    	<exec executable="ls" failifexecutionfails="false" failonerror="false">
+    		<arg value="-al"/>
+    		<arg value="${java.share.path}"/>
+    	</exec>
+
+        <echo message="stage java share dir:"/>
+    	<exec executable="ls" failifexecutionfails="false" failonerror="false">
+    		<arg value="-al"/>
+    		<arg value="${stage.java.share.path}"/>
+    	</exec>
+
+		<!-- Set compile classpaths -->
+		<path id="compile.classpath">
+
+			<fileset dir="${log4j.location}">
+				<include name="**/log4j*.jar" />
+			</fileset>
+
+			<fileset dir="${bouncycastle.location}">
+				<include name="**/bcprov*.jar" />
+			</fileset>
+		</path>
+		<path id="test.classpath">
+
+			<!-- compile classpath -->
+			<path refid="compile.classpath" />
+			<fileset dir="${junit.location}">
+				<include name="**/junit*.jar" />
+			</fileset>
+
+		</path>
+	</target>
+
+	<target name="compile" depends="init">
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="src" destdir="${build.dir}" deprecation="false" failonerror="true" debug="true" target="${jdk.target.version.force}">
+			<classpath refid="compile.classpath" />
+		</javac>
+		
+		<copy todir="${build.dir}">
+			<fileset dir="src">
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="lib"/>
+		<jar destfile="lib/${jar.name}.jar"
+		     basedir="${build.dir}"
+		     includes="**/*.class,**/*.properties"
+			 index="true">
+			<manifest>	
+    			<attribute name="Package-Title" value="${project-name}"/>
+    			<attribute name="Package-Version" value="${module.version}"/>
+    			<attribute name="Package-Vendor" value="EMI"/>
+    			<attribute name="build" value="${build.time}"/>
+    			<attribute name="build-by" value="${user.name}"/>
+    			<attribute name="build-OS" value="${os.name}"/>
+<!--    			<attribute name="build host" value="${buildhost.NAME}.${buildhost.DOMAIN}"/>
+-->				
+			</manifest>
+        </jar>
+	</target>
+
+	<target name="compile-extcp">
+		<mkdir dir="${build.dir}"/>
+		<javac srcdir="src" destdir="${build.dir}" deprecation="false" failonerror="true" debug="true" target="${jdk.target.version.force}">
+		</javac>
+		
+		<copy todir="${build.dir}">
+			<fileset dir="src">
+				<include name="**/*.properties" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="lib"/>
+		<jar destfile="lib/${jar.name}.jar"
+		     basedir="${build.dir}"
+		     includes="**/*.class,**/*.properties"/>
+
+	</target>
+
+
+	<target name="clean">
+		<delete dir="${package.prefix}" />
+		<delete dir="${build.dir}" />
+		<delete dir="${test.dir}" />
+		<delete dir="lib" />
+		<delete dir="cobertura" />
+		<delete dir="test-reports" />
+	</target>
+
+	<target name="compile-test" depends="compile">
+		<mkdir dir="${test.dir}/classes"/>
+		<javac srcdir="test/src" destdir="${test.dir}/classes" deprecation="false" failonerror="true" debug="true" target="${jdk.target.version.force}">
+			<classpath refid="compile.classpath" />
+		    <classpath location="${java.share.path}/junit.jar"/>
+		    <classpath path="${build.dir}"/>
+		</javac>
+	</target>
+	
+	<taskdef classpath="${java.share.path}/cobertura.jar" resource="tasks.properties" />
+	
+	<target name="instrument" depends="compile-test">
+	  <cobertura-instrument todir="${test.dir}/instrumented-classes">
+	    <fileset dir="${build.dir}">
+	      <include name="**/*.class"/>
+	    </fileset>
+	  </cobertura-instrument>
+	</target>
+	
+	<target name="cover-test" depends="instrument">
+	  <mkdir dir="cobertura" />
+	  <mkdir dir="test-reports" />
+		
+	  <junit dir="." failureproperty="test.failure" printSummary="yes" 
+	         fork="true" haltonerror="true" forkmode="once" showoutput="true">
+	    <!-- Normally you can create this task by copying your existing JUnit
+	         target, changing its name, and adding these next two lines.
+	         You may need to change the locations to point to wherever 
+	         you've put the cobertura.jar file and the instrumented classes. -->
+	    <classpath location="${java.share.path}/cobertura.jar"/>
+	    <classpath location="${java.share.path}/junit.jar"/>
+	    <classpath path="${test.dir}/instrumented-classes"/>
+	    <classpath path="${build.dir}"/>
+	    <classpath path="${test.dir}/classes"/>
+		<classpath refid="compile.classpath" />
+	    <batchtest todir="test-reports">
+	      <fileset dir="${test.dir}/classes">
+	        <include name="**/*Test.class" />
+	      </fileset>
+	    </batchtest>
+	  </junit>
+	</target>	
+	
+	<target name="coverage-report" depends="cover-test">
+	 	<cobertura-report srcdir="src" destdir="cobertura"/>
+	</target>
+	
+	<!--
+	<target name="unittest" depends="compiletest"
+		description="Run the module unit tests.">
+
+		<echo>Running test suite...</echo>
+
+                 <property name="gliteSecurity.home" value="test"/>
+		<junit printsummary="false" haltonfailure="true" dir="${module.dir}" fork="true">
+			<classpath refid="test.classpath" />
+                        <jvmarg line="-DgliteSecurity.home=${workspace.abs.dir} -Dstage.abs.dir=${stage.dir}"/>
+		    	<formatter type="brief" usefile="false"/>
+		    	<formatter type="xml" />
+		    	<batchtest todir="${module.test.reports.dir}">
+		    		<fileset dir="${module.test.classes.dir}" includes="**/*Tests.class" />
+		    	</batchtest>
+		</junit>
+		
+		<echo>Done!</echo>
+	</target>
+-->
+	<target name="test" />
+
+	<target name="doc" description="Build Javadoc">
+
+		<mkdir dir="${package.javadoc.path}" />
+		<javadoc packagenames="org.glite.security.*" classpathref="compile.classpath" sourcepath="src" destdir="${package.javadoc.path}" author="true" version="true" use="true" access="public" />
+
+		<copy todir="${package.doc.path}" file="LICENSE"/>
+	</target>
+	
+	<target name="doc-extcp" description="Build Javadoc">
+
+		<mkdir dir="${package.javadoc.path}" />
+		<javadoc packagenames="org.glite.security.*" sourcepath="src" destdir="${package.javadoc.path}" author="true" version="true" use="true" access="public" />
+		
+		<copy todir="${package.doc.path}" file="LICENSE"/>
+	</target>
+	
+	<target name="dist" depends="compile, doc">
+		<mkdir dir="${package.java.share.path}" />
+		<copy todir="${package.java.share.path}">
+			<fileset dir="lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="stage" depends="dist">
+		<mkdir dir="${stage.java.share.path}"/>
+		<copy todir="${stage.java.share.path}">
+			<fileset dir="lib">
+				<include name="**/*.jar" />
+			</fileset>
+		</copy>
+	</target>
+
+
+</project>

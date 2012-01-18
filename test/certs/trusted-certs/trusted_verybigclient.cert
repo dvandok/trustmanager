@@ -1,0 +1,133 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 390 (0x186)
+        Signature Algorithm: sha1WithRSAEncryption
+        Issuer: C=UG, L=Tropic, O=Utopia, OU=Relaxation, CN=the trusted CA
+        Validity
+            Not Before: Dec 15 22:24:15 2011 GMT
+            Not After : Aug 23 22:24:15 2025 GMT
+        Subject: C=UG, L=Tropic, O=Utopia, OU=Relaxation, CN=trusted very big client
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+            RSA Public Key: (8192 bit)
+                Modulus (8192 bit):
+                    00:d3:ab:20:31:50:56:c6:55:c3:a9:87:10:55:b2:
+                    84:c2:03:f1:df:03:29:18:b7:a5:37:ab:9f:88:d9:
+                    85:00:8c:7e:8c:d3:91:4f:15:44:06:d8:6d:b3:b2:
+                    11:61:8c:7c:46:65:5e:86:63:63:e0:f4:e0:92:cf:
+                    b9:e2:3e:94:a1:92:51:24:7e:18:21:5c:3f:b7:8c:
+                    48:49:1a:c9:d1:62:9a:5c:b3:f2:28:3c:44:65:90:
+                    bb:02:cf:31:a7:c8:42:9e:97:0e:73:c6:b8:73:c8:
+                    66:67:c7:64:c4:7d:8f:7d:0a:57:25:80:13:64:f7:
+                    a1:01:ff:3f:48:3f:12:1d:be:d1:1b:0a:36:31:8c:
+                    6a:8a:26:02:45:1a:02:4a:50:f6:4a:c0:60:ce:a0:
+                    dc:96:91:cb:d5:d5:d3:d9:4e:e7:56:44:f1:9f:86:
+                    b0:24:5d:38:08:88:fe:16:40:a8:60:15:b4:d6:92:
+                    61:f4:f6:f3:41:2b:08:52:3e:c7:98:66:c9:5a:80:
+                    e5:ea:b7:71:7a:80:39:7d:6e:5a:8c:20:ef:1c:2c:
+                    7b:3b:a3:5e:6d:00:f7:99:2d:14:79:38:cc:da:1e:
+                    b4:7b:15:af:64:13:ca:14:53:8c:e4:46:d1:a6:68:
+                    9d:38:04:98:6f:93:b4:49:6f:42:dc:8b:7f:c7:ca:
+                    c4:13:27:00:f0:a2:9f:71:3a:5b:f3:32:28:61:4d:
+                    89:47:cc:1f:89:ee:74:c3:65:12:2e:e4:23:02:a6:
+                    c4:25:a6:fa:e2:95:6d:70:b7:48:5d:24:40:c7:30:
+                    21:0e:8b:8b:14:a9:d8:a3:7f:de:d4:6c:86:1b:08:
+                    77:9a:db:bf:7b:c8:b3:b9:2f:99:32:2b:c6:4d:32:
+                    d5:e0:20:a6:39:08:a1:10:e2:2c:68:bf:2f:7f:79:
+                    61:82:1c:64:6b:40:41:15:44:f5:51:89:8b:8f:85:
+                    a6:7a:59:72:ad:cc:f6:37:f3:50:dc:02:46:80:84:
+                    60:d8:21:82:e0:6a:41:65:cf:56:ba:e4:ab:86:9f:
+                    d9:d1:2e:16:58:eb:7f:61:ac:18:52:7e:c5:73:4a:
+                    a6:d0:71:cf:cd:05:5d:64:02:b6:a4:ca:7a:c2:c3:
+                    c0:59:a1:86:9c:ce:ea:b4:3d:eb:9f:54:15:dd:c0:
+                    91:01:6b:2c:57:55:40:4c:ee:f0:60:30:ad:31:e1:
+                    9d:44:f7:2c:5e:ca:44:b4:ee:8b:90:e0:07:f5:a7:
+                    ef:dc:16:65:f8:32:33:c8:b9:24:68:93:47:e9:e8:
+                    77:1d:f7:89:e4:44:02:94:9e:8a:76:a4:ca:71:b1:
+                    68:df:bf:ef:2d:e3:e0:af:b1:32:52:17:4f:06:cd:
+                    8c:6f:8d:0f:d1:6b:47:bc:cf:a3:6c:d3:58:96:61:
+                    ce:f8:f7:e0:cd:5c:55:c1:bc:53:2b:90:3a:02:b4:
+                    fa:de:5e:de:0d:9c:26:c7:d1:76:d6:73:90:fc:e4:
+                    7f:5f:f7:69:3b:6f:6d:b9:df:ec:be:78:0a:a6:1f:
+                    4a:e6:85:89:23:07:7b:27:1f:51:71:b8:13:76:44:
+                    ea:0d:35:bf:93:e3:90:f9:8b:7d:22:de:f8:86:89:
+                    a0:e1:04:81:85:0d:45:25:57:90:71:7e:00:38:6b:
+                    ea:47:5e:25:ec:2d:86:73:65:ae:4f:2b:e0:be:9e:
+                    5f:9b:0c:a7:b2:84:d7:61:b7:78:bc:9a:16:8b:1f:
+                    bc:9f:7e:f6:32:9e:ba:57:5b:48:c4:fd:51:e4:3e:
+                    1c:f3:15:88:4c:05:70:0c:77:7e:73:ca:e8:cd:69:
+                    ec:80:bd:ee:01:1c:71:44:bc:d8:38:0e:c1:cb:6e:
+                    3c:df:48:5f:b9:b8:6c:33:3b:13:ea:8d:b5:42:eb:
+                    b2:92:76:71:ac:2f:2f:a5:af:ba:43:26:01:d3:9e:
+                    fc:77:26:84:c8:b9:58:61:32:50:24:df:67:c1:14:
+                    c3:25:0e:4a:ec:ab:47:c6:31:1e:21:a6:d9:e7:bc:
+                    c1:67:93:1b:91:0c:07:d6:3f:09:85:82:a0:aa:a0:
+                    06:1f:83:e6:8c:db:3d:30:cd:ec:4d:94:95:56:12:
+                    e3:fe:bf:d6:7d:8c:ee:a1:3c:9b:1d:77:38:45:7e:
+                    a9:65:59:9a:50:3b:6a:ee:8f:13:08:5c:f5:48:8d:
+                    4b:45:a6:da:c3:7d:be:76:2a:7f:a9:39:a1:47:31:
+                    bb:bc:a2:6a:1f:5f:6e:4b:d7:6a:1c:4c:14:d9:da:
+                    84:7a:07:af:fa:1f:f9:38:21:a6:68:de:78:7a:f7:
+                    02:cd:f4:66:7d:bc:09:f3:75:bc:b6:5d:43:be:fe:
+                    9f:54:4c:29:39:14:df:f9:1d:70:f5:f7:3f:7a:23:
+                    3d:38:ae:29:56:1e:e2:5c:c9:42:e1:13:55:40:a1:
+                    13:31:94:19:db:6c:17:f2:bd:6f:ca:76:d8:be:d8:
+                    ee:f4:02:58:eb:46:63:e3:17:d6:47:e8:99:69:32:
+                    1f:f5:6f:74:fb:77:c7:da:28:57:0b:df:0b:a0:06:
+                    02:45:ba:37:5c:0f:f3:01:1e:88:5f:b3:12:a6:4c:
+                    ce:f7:f0:81:95:d6:bd:b1:80:e1:da:29:2d:e0:23:
+                    a3:6a:1c:f6:00:c3:20:89:6b:f3:05:78:8b:8e:cf:
+                    2e:90:2a:be:af:0e:9a:dd:ac:d1:3c:bb:2e:bf:4a:
+                    b7:b0:09:6d:02:a4:de:99:a1:16:ce:f6:32:7e:23:
+                    fa:31:2d:dd:6d
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            Netscape Cert Type: 
+                SSL Client, S/MIME
+            Netscape Comment: 
+                OpenSSL Generated Client Certificate
+    Signature Algorithm: sha1WithRSAEncryption
+        59:47:e8:21:29:5d:43:89:89:e9:bf:bc:d9:f3:0d:80:bf:b9:
+        38:41:53:09:52:91:fa:b0:0b:fc:75:e8:89:03:d6:93:1f:c6:
+        a8:74:09:be:e5:97:ae:a2:ba:93:9e:7b:81:5b:25:16:b8:7e:
+        47:9d:f5:5a:61:6f:70:38:14:41:54:9a:e7:79:c8:d3:7a:3b:
+        b3:f5:25:f9:9c:ee:95:6d:28:0e:b0:b2:61:da:77:b2:3c:ed:
+        d7:4e:f9:ee:25:c6:dd:7d:54:ea:c2:d5:89:89:ac:31:7a:95:
+        80:04:ca:41:52:82:79:66:c6:28:b8:1b:33:5a:ef:0a:a9:fd:
+        c2:47
+-----BEGIN CERTIFICATE-----
+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
+xii4GzNa7wqp/cJH
+-----END CERTIFICATE-----

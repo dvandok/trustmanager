@@ -1,0 +1,15 @@
+.project
+.cdtproject
+.classpath
+jardesc.jardesc
+.settings
+*.log.1
+emitm.jardesc
+build
+lib
+tmp-prefix
+test-build
+test-reports
+cobertura.ser
+*.jardesc
+cobertura
