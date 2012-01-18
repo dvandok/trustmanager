@@ -84,7 +84,7 @@ public class OpensslTrustmanager implements X509TrustManager {
         try {
             m_validator.check(arg0);
         } catch (Exception e) {
-            LOGGER.info("The certificate validation for [" + arg0[0].getSubjectDN() + "] failed: " + e.getClass().getName() + " error was: " + e.getMessage());
+            LOGGER.info("The certificate validation for [" + arg0[0].getSubjectDN() + "] failed: " + e.getMessage());
             throw new CertificateException(e.getMessage());
         }
     }

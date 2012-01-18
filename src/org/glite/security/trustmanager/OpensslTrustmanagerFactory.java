@@ -113,7 +113,7 @@ public class OpensslTrustmanagerFactory {
         InstanceID newID = new InstanceID(id, path, crlRequired);
         if (latestID != null) {
             if (newID.equals(latestID)) {
-                // check if there is more than 2 hours from the latest update check. If yes, force update. Needed for nonupdating trustmanagers that get reused.
+                // check if there is more than 2 hours from the latest update check. If yes, force update.
                 Calendar cutoffTime = Calendar.getInstance();
                 cutoffTime.add(Calendar.HOUR_OF_DAY, -UPDATE_INTERVAL_H);
                 if (cutoffTime.after(lastUpdate)) {

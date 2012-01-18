@@ -1,11 +1,6 @@
-V	250823222423Z		0176	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client
-V	250823222426Z		0177	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client with md5 hash
-V	250823222426Z		0178	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client with sha224 hash
-V	250823222426Z		0179	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client with sha256 hash
-V	250823222426Z		017A	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client with sha384 hash
-V	250823222427Z		017B	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client with sha512 hash
-V	250823222427Z		017C	unknown	/C=UG/L=Tropic/O=Utopia/OU=Chilling/CN=bad client with bad DN
-V	250823222427Z		017D	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client future
-V	111214222428Z		017E	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client expired
-R	250823222428Z	111215222428Z	017F	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client revoked
-V	250823222428Z		0180	unknown	/C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/CN=bad client slash
+V	380503173757Z		0176	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client
+V	380503173759Z		0177	unknown	/C=UG/L=Tropic/O=Utopia/OU=Chilling/CN=bad client with bad DN
+V	380503173800Z		0178	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client future
+V	101215173800Z		0179	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client expired
+R	380503173800Z	101216173800Z	017A	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=bad client revoked
+V	380503173800Z		017B	unknown	/C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/CN=bad client slash

@@ -1,41 +1,36 @@
-V	250823222352Z		0176	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client
-V	250823222354Z		0177	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client with md5 hash
-V	250823222355Z		0178	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client with sha224 hash
-V	250823222355Z		0179	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client with sha256 hash
-V	250823222355Z		017A	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client with sha384 hash
-V	250823222356Z		017B	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client with sha512 hash
-V	250823222356Z		017C	unknown	/C=UG/L=Tropic/O=Utopia/OU=Chilling/CN=trusted client with bad DN
-V	250823222356Z		017D	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client future
-V	111214222356Z		017E	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client expired
-R	250823222357Z	111215222357Z	017F	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client revoked
-V	250823222357Z		0180	unknown	/C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/CN=trusted client slash
-V	250823222357Z		0181	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client serial/serialNumber=12341
-V	250823222357Z		0182	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client email/emailAddress=john.doe@foo.bar
-V	250823222358Z		0183	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client UID/UID=haahaa
-V	250823222358Z		0184	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag client
-V	250823222400Z		0185	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted bigclient
-V	250823222415Z		0186	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted very big client
-V	250823222416Z		0187	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted server
-V	250823222416Z		0188	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=pchip10.cern.ch
-R	250823222416Z	111215222416Z	0189	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=CN=revoked, pchip10.cern.ch
-V	111214222416Z		018A	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=pchip10.cern.ch, emailAddress=expired@expired.foo
-V	250823222416Z		018B	unknown	/C=UG/L=Tropic/O=Utopia/OU=Chilling/CN=pchip10.cern.ch
-V	250823222416Z		018C	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=pchip10.cern.ch/emailAddress=john.doe@foo.bar
-V	250823222416Z		018D	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted/xxx.foo.bar
-V	250823222416Z		018E	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname/CN=xxx.foo.bar
-V	250823222416Z		018F	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted hostname only in altname
-V	250823222416Z		0190	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname cont hostname/CN=pchip10.cern.ch
-V	250823222416Z		0191	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname but no hostname anywhere
-V	250823222416Z		0192	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname without hosname/CN=pchip10.cern.ch
-V	250823222416Z		0193	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=xxx2.foo.bar
-V	250823222416Z		0194	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted clientserver
-V	250823222417Z		0195	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted none
-V	111214222417Z		0196	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag client expired
-V	111214222417Z		0197	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag server expired
-V	111214222417Z		0198	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted clientserver expired
-V	111214222417Z		0199	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted none expired
-R	250823222418Z	111215222418Z	019A	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag client revoked
-R	250823222418Z	111215222418Z	019B	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted server revoked
-R	250823222418Z	111215222418Z	019C	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted clientserver revoked
-R	250823222418Z	111215222418Z	019D	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted none revoked
-V	250823222418Z		019E	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=hahkala
+V	380503173735Z		0176	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client
+V	380503173737Z		0177	unknown	/C=UG/L=Tropic/O=Utopia/OU=Chilling/CN=trusted client with bad DN
+V	380503173738Z		0178	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client future
+V	101215173738Z		0179	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client expired
+R	380503173738Z	101216173739Z	017A	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client revoked
+V	380503173739Z		017B	unknown	/C=UG/L=Tropic/O=http://slash.slash.edu:7656/testing/OU=Relaxation/CN=trusted client slash
+V	380503173739Z		017C	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client serial/serialNumber=12341
+V	380503173739Z		017D	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client email/emailAddress=john.doe@foo.bar
+V	380503173739Z		017E	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted client UID/UID=haahaa
+V	380503173740Z		017F	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag client
+V	380503173744Z		0180	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted bigclient
+V	380503173750Z		0181	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted very big client
+V	380503173751Z		0182	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted server
+V	380503173751Z		0183	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=pchip10.cern.ch
+R	380503173751Z	101216173751Z	0184	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=CN=revoked, pchip10.cern.ch
+V	101215173751Z		0185	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=pchip10.cern.ch, emailAddress=expired@expired.foo
+V	380503173751Z		0186	unknown	/C=UG/L=Tropic/O=Utopia/OU=Chilling/CN=pchip10.cern.ch
+V	380503173751Z		0187	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=pchip10.cern.ch/emailAddress=john.doe@foo.bar
+V	380503173751Z		0188	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted/xxx.foo.bar
+V	380503173752Z		0189	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname/CN=xxx.foo.bar
+V	380503173752Z		018A	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted hostname only in altname
+V	380503173752Z		018B	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname cont hostname/CN=pchip10.cern.ch
+V	380503173752Z		018C	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname but no hostname anywhere
+V	380503173752Z		018D	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted altname without hosname/CN=pchip10.cern.ch
+V	380503173752Z		018E	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=xxx2.foo.bar
+V	380503173752Z		018F	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted clientserver
+V	380503173752Z		0190	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted none
+V	101215173752Z		0191	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag client expired
+V	101215173753Z		0192	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag server expired
+V	101215173753Z		0193	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted clientserver expired
+V	101215173753Z		0194	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted none expired
+R	380503173753Z	101216173753Z	0195	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted flag client revoked
+R	380503173753Z	101216173753Z	0196	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted server revoked
+R	380503173753Z	101216173754Z	0197	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted clientserver revoked
+R	380503173754Z	101216173754Z	0198	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=trusted none revoked
+V	380503173754Z		0199	unknown	/C=UG/L=Tropic/O=Utopia/OU=Relaxation/CN=hahkala

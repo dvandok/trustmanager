@@ -1,55 +1,55 @@
 Certificate:
     Data:
         Version: 3 (0x2)
-        Serial Number: 396 (0x18c)
-        Signature Algorithm: sha1WithRSAEncryption
+        Serial Number: 391 (0x187)
+        Signature Algorithm: md5WithRSAEncryption
         Issuer: C=UG, L=Tropic, O=Utopia, OU=Relaxation, CN=the trusted CA
         Validity
-            Not Before: Dec 15 22:24:16 2011 GMT
-            Not After : Aug 23 22:24:16 2025 GMT
+            Not Before: Dec 16 17:37:51 2010 GMT
+            Not After : May  3 17:37:51 2038 GMT
         Subject: C=UG, L=Tropic, O=Utopia, OU=Relaxation, CN=pchip10.cern.ch/emailAddress=john.doe@foo.bar
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
             RSA Public Key: (1024 bit)
                 Modulus (1024 bit):
-                    00:d8:50:d4:25:c8:9c:96:cb:ad:7a:7c:52:f2:4f:
-                    03:d3:71:cb:3f:6f:26:d4:1d:dd:9a:70:be:55:ba:
-                    7f:63:4a:d9:8a:26:df:d7:0e:cf:b5:79:c5:86:14:
-                    c9:c8:8b:17:94:cc:2b:26:e7:b7:00:ce:00:2f:f8:
-                    08:9e:28:87:e7:3b:7b:6a:d9:33:08:97:95:89:bc:
-                    e3:ae:dd:9d:9a:2b:e9:d5:9d:61:a0:f1:48:56:d4:
-                    f6:aa:24:a6:59:bf:9d:a3:6d:32:82:03:b0:fa:01:
-                    31:fa:d3:7c:f2:67:8c:3d:d7:bc:8c:00:39:7e:7a:
-                    3c:4d:c6:86:b8:2c:f5:28:bf
+                    00:ca:81:f5:d5:3c:e3:85:12:20:4f:86:e9:71:79:
+                    81:cf:4b:b2:ec:97:51:e8:61:33:67:c4:73:69:39:
+                    31:3a:6b:d9:89:89:b8:8d:1b:a1:3a:23:6c:8f:60:
+                    dd:aa:b4:09:fd:0e:e7:c8:18:8d:cc:cb:18:ed:bc:
+                    e7:37:2e:e7:e6:3f:8a:c4:5c:a4:8d:8d:4f:4b:24:
+                    d8:0f:75:cb:eb:6c:19:38:22:e8:c6:b4:3a:5d:8b:
+                    5a:57:91:36:a8:49:da:3a:4d:9c:8f:45:29:28:ab:
+                    88:df:d7:ba:8e:07:6e:e0:09:18:7f:b5:0b:0b:09:
+                    6f:96:cf:7f:32:1f:b1:a2:11
                 Exponent: 65537 (0x10001)
         X509v3 extensions:
             Netscape Cert Type: 
                 SSL Server
             Netscape Comment: 
                 OpenSSL Generated Server Certificate
-    Signature Algorithm: sha1WithRSAEncryption
-        67:3e:cd:30:59:21:26:03:07:3d:80:58:e9:f4:80:25:ca:38:
-        c2:07:77:56:6e:ff:f8:d9:74:9e:64:9a:23:e7:68:e4:e1:61:
-        28:02:51:f0:d5:06:cc:4c:70:aa:3f:39:c1:e7:ab:ba:ac:69:
-        94:30:24:b7:e3:7a:bd:26:13:50:9e:c6:b5:03:29:cd:a4:66:
-        cd:0a:4f:09:32:d4:1a:c7:b8:56:ed:36:3d:56:e9:ce:95:b2:
-        07:86:30:47:f0:72:23:0f:3a:ba:c9:41:d5:07:83:bf:17:b2:
-        08:e0:44:19:e4:53:44:95:6f:84:63:dc:f8:f5:37:a1:04:c6:
-        8c:c9
+    Signature Algorithm: md5WithRSAEncryption
+        31:75:a3:ec:84:30:ad:f6:43:a7:e8:96:a8:ee:93:fe:d7:1d:
+        fe:38:29:4c:4a:d7:15:a3:d7:3e:d6:a1:ba:4f:90:86:99:7c:
+        1e:45:4f:f6:07:43:64:ca:ac:78:b1:d8:ae:00:0e:03:79:27:
+        88:7f:15:97:5e:57:63:2d:15:8d:b0:bd:1c:a4:e0:a3:ea:34:
+        d7:23:c4:0f:e3:9f:51:7c:0b:43:ce:56:18:09:c5:ce:53:4f:
+        ea:64:72:87:a6:1a:90:82:9a:e0:9b:10:0a:bc:30:43:97:a0:
+        b8:6d:f1:ed:04:23:f3:29:da:29:fa:65:2e:01:1d:9a:38:13:
+        db:3d
 -----BEGIN CERTIFICATE-----
-MIICnTCCAgagAwIBAgICAYwwDQYJKoZIhvcNAQEFBQAwXTELMAkGA1UEBhMCVUcx
+MIICnTCCAgagAwIBAgICAYcwDQYJKoZIhvcNAQEEBQAwXTELMAkGA1UEBhMCVUcx
 DzANBgNVBAcTBlRyb3BpYzEPMA0GA1UEChMGVXRvcGlhMRMwEQYDVQQLEwpSZWxh
-eGF0aW9uMRcwFQYDVQQDEw50aGUgdHJ1c3RlZCBDQTAeFw0xMTEyMTUyMjI0MTZa
-Fw0yNTA4MjMyMjI0MTZaMH8xCzAJBgNVBAYTAlVHMQ8wDQYDVQQHEwZUcm9waWMx
+eGF0aW9uMRcwFQYDVQQDEw50aGUgdHJ1c3RlZCBDQTAeFw0xMDEyMTYxNzM3NTFa
+Fw0zODA1MDMxNzM3NTFaMH8xCzAJBgNVBAYTAlVHMQ8wDQYDVQQHEwZUcm9waWMx
 DzANBgNVBAoTBlV0b3BpYTETMBEGA1UECxMKUmVsYXhhdGlvbjEYMBYGA1UEAxMP
 cGNoaXAxMC5jZXJuLmNoMR8wHQYJKoZIhvcNAQkBFhBqb2huLmRvZUBmb28uYmFy
-MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDYUNQlyJyWy616fFLyTwPTccs/
-bybUHd2acL5Vun9jStmKJt/XDs+1ecWGFMnIixeUzCsm57cAzgAv+AieKIfnO3tq
-2TMIl5WJvOOu3Z2aK+nVnWGg8UhW1PaqJKZZv52jbTKCA7D6ATH603zyZ4w917yM
-ADl+ejxNxoa4LPUovwIDAQABo0owSDARBglghkgBhvhCAQEEBAMCBkAwMwYJYIZI
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDKgfXVPOOFEiBPhulxeYHPS7Ls
+l1HoYTNnxHNpOTE6a9mJibiNG6E6I2yPYN2qtAn9DufIGI3MyxjtvOc3LufmP4rE
+XKSNjU9LJNgPdcvrbBk4IujGtDpdi1pXkTaoSdo6TZyPRSkoq4jf17qOB27gCRh/
+tQsLCW+Wz38yH7GiEQIDAQABo0owSDARBglghkgBhvhCAQEEBAMCBkAwMwYJYIZI
 AYb4QgENBCYWJE9wZW5TU0wgR2VuZXJhdGVkIFNlcnZlciBDZXJ0aWZpY2F0ZTAN
-BgkqhkiG9w0BAQUFAAOBgQBnPs0wWSEmAwc9gFjp9IAlyjjCB3dWbv/42XSeZJoj
-52jk4WEoAlHw1QbMTHCqPznB56u6rGmUMCS343q9JhNQnsa1AynNpGbNCk8JMtQa
-x7hW7TY9VunOlbIHhjBH8HIjDzq6yUHVB4O/F7II4EQZ5FNElW+EY9z49TehBMaM
-yQ==
+BgkqhkiG9w0BAQQFAAOBgQAxdaPshDCt9kOn6Jao7pP+1x3+OClMStcVo9c+1qG6
+T5CGmXweRU/2B0Nkyqx4sdiuAA4DeSeIfxWXXldjLRWNsL0cpOCj6jTXI8QP459R
+fAtDzlYYCcXOU0/qZHKHphqQgprgmxAKvDBDl6C4bfHtBCPzKdop+mUuAR2aOBPb
+PQ==
 -----END CERTIFICATE-----

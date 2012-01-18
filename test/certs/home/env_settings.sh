@@ -24,7 +24,7 @@
 ###################################################################
 
 
-export X509_CERT_DIR=/home/hahkala/tuu/org.glite.security.test-utils/tii/grid-security/certificates
-export X509_USER_CERT=/home/hahkala/tuu/org.glite.security.test-utils/tii/home/usercert.pem
-export X509_USER_KEY=/home/hahkala/tuu/org.glite.security.test-utils/tii/home/userkey.pem
-export X509_VOMS_DIR=/home/hahkala/tuu/org.glite.security.test-utils/tii/grid-security/vomsdir
+export X509_CERT_DIR=/home/hahkala/glite/org.glite.security.test-utils/tii/grid-security/certificates
+export X509_USER_CERT=/home/hahkala/glite/org.glite.security.test-utils/tii/home/usercert.pem
+export X509_USER_KEY=/home/hahkala/glite/org.glite.security.test-utils/tii/home/userkey.pem
+export X509_VOMS_DIR=/home/hahkala/glite/org.glite.security.test-utils/tii/grid-security/vomsdir

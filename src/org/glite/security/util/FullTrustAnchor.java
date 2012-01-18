@@ -30,7 +30,6 @@ import java.text.ParseException;
 import java.util.Vector;
 
 import org.apache.log4j.Logger;
-import org.glite.security.trustmanager.ContextWrapper;
 import org.glite.security.util.namespace.EUGridNamespaceFormat;
 import org.glite.security.util.namespace.LegacyNamespaceFormat;
 import org.glite.security.util.namespace.NamespaceFormat;
@@ -98,22 +97,20 @@ public class FullTrustAnchor {
 
     /** The time the CA dir was last polled for changes. */
     public long m_lastUpdateCheck;
-
+    
     /** The revocation checker instance. */
     public RevocationChecker m_revChecker;
 
     /** The revocation checker class definition. */
     private String m_revCheckerClass;
-
+    
     /** The initial properties. */
     private CaseInsensitiveProperties m_props;
-
-    /** Whether the CRL support is enabled */
-    public boolean m_crlEnabled = true;
+    
+   
 
     /*
      * (non-Javadoc)
-     * 
      * @see java.lang.Object#toString()
      */
     public String toString() {
@@ -126,6 +123,8 @@ public class FullTrustAnchor {
         buf.append(m_caModified);
         buf.append("\n RevocationChecker: ");
         buf.append(m_revChecker);
+//        buf.append("\n crl modified: ");
+//        buf.append(m_crlModified);
         buf.append("\n nameSpace from " + m_namespaceFilename + ": ");
         buf.append(m_namespace);
         buf.append("\n namespace modified: ");
@@ -154,8 +153,7 @@ public class FullTrustAnchor {
      * @param props the settings to use and to pass to child classes.
      */
     @SuppressWarnings("boxing")
-    private void initCAInfo(String caFilename, CaseInsensitiveProperties props) throws IOException,
-            CertificateException {
+    private void initCAInfo(String caFilename, CaseInsensitiveProperties props) throws IOException, CertificateException {
         if (caFilename == null || caFilename.length() == 0) {
             throw new IOException("Can't initialize a trustanchor without filename.");
         }
@@ -165,14 +163,13 @@ public class FullTrustAnchor {
         m_caHash = parts.m_hash;
         m_caNumber = parts.m_number;
         m_baseFilename = parts.m_baseFilename;
-        m_props = props;
 
         loadCACert(m_baseFilename + "." + m_caNumber);
-        try {
+        try{
             m_caCert.checkValidity(); // check that the CA is acceptable.
-        } catch (CertificateNotYetValidException e) {
+        }catch (CertificateNotYetValidException e){
             throw new CertificateNotYetValidException(DNHandler.getSubject(m_caCert).getRFCDN() + " " + e.getMessage());
-        } catch (CertificateExpiredException e) {
+        }catch (CertificateExpiredException e){
             throw new CertificateExpiredException(DNHandler.getSubject(m_caCert).getRFCDN() + " " + e.getMessage());
         }
 
@@ -185,7 +182,7 @@ public class FullTrustAnchor {
         }
 
         /* Check that the CA has required keyCertSign bit set */
-        if (m_caCert.getKeyUsage() == null || m_caCert.getKeyUsage()[5] != true) {
+        if(m_caCert.getKeyUsage() == null || m_caCert.getKeyUsage()[5] != true){
             LOGGER.error("The CA certificate " + DNHandler.getSubject(m_caCert).getRFCDN()
                     + " is an invalid CA as it doesn't have the required keyCertSign flag set.");
             throw new CertificateException("The CA certificate " + DNHandler.getSubject(m_caCert).getRFCDN()
@@ -194,62 +191,40 @@ public class FullTrustAnchor {
         // force parsing at least some of the cert to force it to fail if there are errors in it.
         m_caCert.getNonCriticalExtensionOIDs();
 
-        // see if the CRL support is disabled
-        if (props != null) {
-            String crlEnabledText = props.getProperty(ContextWrapper.CRL_ENABLED);
-
-            if (crlEnabledText != null) {
-                crlEnabledText = crlEnabledText.trim().toLowerCase();
-            } else {
-                crlEnabledText = ContextWrapper.CRL_ENABLED_DEFAULT;
-            }
-
-            if (crlEnabledText.startsWith("f") || crlEnabledText.startsWith("n")) {
-                m_crlEnabled = false;
-            }
+        if(props != null){
+            m_revCheckerClass = props.get(REVOCATION_CHECKER_CLASS);
+        }
+        if(m_revCheckerClass == null || m_revCheckerClass.length() < 1){
+            m_revCheckerClass = REVOCATION_CHECKER_CLASS_DEFAULT;
         }
 
-        // if CRL support is enabled, load and initialize the revocation checker
-        if (m_crlEnabled == true) {
-            if (props != null) {
-                m_revCheckerClass = props.get(REVOCATION_CHECKER_CLASS);
-            }
-            if (m_revCheckerClass == null || m_revCheckerClass.length() < 1) {
-                m_revCheckerClass = REVOCATION_CHECKER_CLASS_DEFAULT;
-            }
-
-            tryInitRevocationChecker();
-        }
-
+        m_props = props;
+        tryInitRevocationChecker();
+        
         // allow namespace loading to fail, namespaces will not be restricted in that case.
         tryLoadNamespace(m_baseFilename);
     }
-
+    
     /**
      * Tries to initialize the revocation checker for this CA. Will warn if it fails.
      */
-    private void tryInitRevocationChecker() {
+    private void tryInitRevocationChecker(){
         // allow CRL loading to fail, CA will most likely be disabled though.
         try {
             Class c = Class.forName(m_revCheckerClass);
-            Constructor<RevocationChecker> constructor = c.getConstructor(X509Certificate.class, String.class,
-                    int.class, CaseInsensitiveProperties.class);
-
+            Constructor<RevocationChecker> constructor = c.getConstructor(X509Certificate.class, String.class, int.class, CaseInsensitiveProperties.class);
+            
             m_revChecker = constructor.newInstance(m_caCert, m_baseFilename, m_caNumber, m_props);
         } catch (InvocationTargetException e) {
             // failed call to constructor.newIstance
             LOGGER.warn("Certificate revocation checker creation for CA " + m_baseFilename + "." + m_caNumber
-                    + " failed, depending on configuration the certificates from the CA "
-                    + DNHandler.getSubject(m_caCert).getRFCDN() + " might be refused. Error was: "
-                    + e.getCause().getMessage());
+                    + " failed, depending on configuration the certificates from the CA " + DNHandler.getSubject(m_caCert).getRFCDN() + " might be refused. Error was: " + e.getCause().getMessage());
         } catch (Exception e) {
-            LOGGER.warn(
-                    "Certificate revocation checker for CA " + m_baseFilename + "." + m_caNumber
-                            + " failed, depending on configuration the certificates from the CA "
-                            + DNHandler.getSubject(m_caCert).getRFCDN() + " might be refused. Error was: "
-                            + e.getClass(), e);
+            LOGGER.warn("Certificate revocation checker for CA " + m_baseFilename + "." + m_caNumber
+                    + " failed, depending on configuration the certificates from the CA " + DNHandler.getSubject(m_caCert).getRFCDN() + " might be refused. Error was: " + e.getClass(), e);
         }
 
+    	
     }
 
     /**
@@ -269,10 +244,9 @@ public class FullTrustAnchor {
 
     /**
      * Tries to load namespaces, if fails, log a warning and continue.
-     * 
      * @param baseFilename The basis filename, without ending that depends on which type gets used.
      */
-    void tryLoadNamespace(String baseFilename) {
+    void tryLoadNamespace(String baseFilename){
         // allow namespace loading to fail, namespaces will not be restricted in that case.
         try {
             loadNamespace(baseFilename);
@@ -290,7 +264,6 @@ public class FullTrustAnchor {
 
     /**
      * Loads the namespace of this CA, trying first to find the IGTF format and the the legacy format.
-     * 
      * @param filenameBase The base filename of the file to load.
      * 
      * @throws IOException Thrown in case the file opening or reading fails.
@@ -312,7 +285,7 @@ public class FullTrustAnchor {
                 LOGGER.warn("Parsing of " + m_namespaceFilename + " failed! Falling back to the "
                         + GLOBUS_NAMESPACE_ENDING + " file. Error was: " + e.getMessage());
             }
-        }
+        } 
         // fallback to the old globus format in case new format is not found
         m_namespaceFilename = filenameBase + GLOBUS_NAMESPACE_ENDING;
         m_namespace = new LegacyNamespaceFormat();
@@ -347,21 +320,17 @@ public class FullTrustAnchor {
         } catch (Exception e) {
             throw new CertificateException("Error loading a CA: " + e.getMessage());
         }
-
-        if (m_revChecker != null) {
-            m_revChecker.checkUpdate();
+        
+        if(m_revChecker != null) { 
+        	m_revChecker.checkUpdate();
         } else {
-            if (m_crlEnabled == true) {
-                tryInitRevocationChecker();
-            }
+            tryInitRevocationChecker();
         }
-
-        // if the current namespacefile is of the old format, check whether there is new format and try to load that
-        // one.
+        
+        // if the current namespacefile is of the old format, check whether there is new format and try to load that one.
         if (!m_namespaceFilename.equals(m_baseFilename + IGTF_NAMESPACE_ENDING)) {
             File namespaceFile = new File(m_baseFilename + IGTF_NAMESPACE_ENDING);
-            LOGGER.debug("new format namespace found when old format used, trying to load new format: "
-                    + namespaceFile.getName());
+            LOGGER.debug("new format namespace found when old format used, trying to load new format: " + namespaceFile.getName());
             tryLoadNamespace(m_baseFilename);
         } else {
             File namespaceFile = new File(m_namespaceFilename);
