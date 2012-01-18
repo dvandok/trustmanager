@@ -1,0 +1,24 @@
+Source: trustmanager
+Section: java
+Priority: optional
+Maintainer: Dennis van Dok (Software Engineer) <dennisvd@nikhef.nl>
+Build-Depends: debhelper (>= 7), default-jdk, javahelper (>= 0.37), ant,
+ maven-repo-helper
+Standards-Version: 3.9.2
+Homepage: <homepage>
+
+Package: libtrustmanager-java
+Architecture: all
+Depends: ${java:Depends}, ${misc:Depends}
+Recommends: ${java:Recommends}
+Description: Short Description
+ Long Description
+
+Package: libtrustmanager-java-doc
+Architecture: all
+Depends: ${java:Depends}, ${misc:Depends}
+Recommends: ${java:Recommends}
+Description: Short Description - doc
+ Long Description
+ .
+ This package contains the Javadoc API

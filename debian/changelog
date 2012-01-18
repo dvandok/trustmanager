@@ -1,0 +1,5 @@
+trustmanager (3.1.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- Dennis van Dok (Software Engineer) <dennisvd@nikhef.nl>  Fri, 13 Jan 2012 10:05:32 +0100

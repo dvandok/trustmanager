@@ -1,0 +1,20 @@
+Format: http://dep.debian.net/deps/dep5/
+Upstream-Name: trustmanager
+Upstream-contact: info@eu-emi.eu
+Source: http://jra1mw.cvs.cern.ch/cgi-bin/jra1mw.cgi/org.glite.security.util-java/src.tar.gz?view=tar&pathrev=emi-trustmanager_R_3_1_0
+Licence: Apache-2.0
+
+Files: *
+Copyright: Copyright (c) Members of the EGEE Collaboration. 2004. 
+ See http://www.eu-egee.org/partners/ for details on the copyright
+ holders.  
+License: Apache-2.0
+
+Files: debian/*
+Copyright: Copyright 2012 Dennis van Dok (Software Engineer) <dennisvd@nikhef.nl>
+License: Apache-2.0
+
+License: Apache-2.0
+  On Debian GNU/Linux system you can find the complete text of the
+  Apache-2.0 license in '/usr/share/common-licenses/Apache-2.0'
+

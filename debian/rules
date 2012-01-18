@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+export JAVA_HOME=/usr/lib/jvm/default-java
+JH_BUILD_JAR=lib/trustmanager.jar
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/javahelper.mk
+include /usr/share/cdbs/1/class/ant.mk
+
+# Put depended upon jars in here
+export CLASSPATH=/usr/share/java/log4j-1.2.jar:/usr/share/java/junit.jar:/usr/share/java/bcprov.jar
+
+binary-post-install/libtrustmanager-java::
+	mh_installpoms -plibtrustmanager-java
+	mh_installjar -plibtrustmanager-java -l debian/pom.xml lib/trustmanager.jar 
+
+clean::
+	mh_clean
