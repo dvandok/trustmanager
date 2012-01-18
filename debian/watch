@@ -1,0 +1,3 @@
+version=3
+
+http://shibboleth.internet2.edu/downloads/maven2/org/opensaml/xmltooling/([\d.]+)/xmltooling-([\d.]+)-src.tar.gz
